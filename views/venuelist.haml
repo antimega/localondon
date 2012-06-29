@@ -1,0 +1,21 @@
+%h1 Venues
+%a(href="/venues/new") New venue
+%table
+- cs.each do|c|
+ %tr
+  %td= c.name
+  %td= c.twitter
+  %td= c.website
+  %td= c.phone
+  %td= c.picture
+  %td= c.address_street_address
+  %td= c.address_city
+  %td= c.address_zip
+  %td= c.address_lat
+  %td= c.address_lng
+
+  %td
+   %a(href="/venues/#{c.id}") Show
+  %td
+   %a(href="/venues/#{c.id}/edit") Edit
+

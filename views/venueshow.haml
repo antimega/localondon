@@ -1,0 +1,33 @@
+%table
+ %tr
+  %td Name
+  %td= c.name
+ %tr
+  %td Twitter
+  %td= c.twitter
+ %tr
+  %td Website
+  %td= c.website
+ %tr
+  %td Phone
+  %td= c.phone   
+ %tr
+  %td Picture
+  %td= c.picture   
+ %tr
+  %td Street Address
+  %td= c.address_street_address
+ %tr
+  %td City
+  %td= c.address_city
+ %tr
+  %td Postcode
+  %td= c.address_zip
+ %tr
+  %td Lat
+  %td= c.address_lat
+ %tr
+  %td Lng
+  %td= c.address_lng
+
+%a(href="/venues/#{c.id}/edit") Edit venue
