@@ -21,7 +21,7 @@ CSV.parse(event_data, :headers => true) do |row|
     Event.create!(
       :id => row['id'],
       :title => row['title'], 
-      :description => row['description'],
+      :description => row['description'][0..40],
       :startdate => row['startdate'],
       :enddate => row['enddate'],
       :city => row['city'],  
