@@ -119,6 +119,17 @@ end
 get "/bergcloud/edition/?" do
   # "Returns the version of this publication for this time. Configuration options (if any) 
   # are passed in along with timezone information (if requested by the publication)"
+
+  today = Time.now.strftime("%Y-%m-%d")
+  end_of_week = (Time.now + 7*24*3600).strftime("%Y-%m-%d")
+
+  @opening = Event.all(
+    :startdate => (today..end_of_week)
+  )
+  @closing = Event.all(
+    :enddate => (today..end_of_week)
+  )
+
   etag "#{Time.now.to_s}"
   erb :edition
 end
