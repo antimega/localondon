@@ -137,7 +137,7 @@
     <h1 class="opening-closing">Opening this week</h1>
 
     <ol>
-      <% @opening[0..1].each do |event| %>
+      <% @opening[0..0].each do |event| %>
       <li>
         <article class="event">
           <% if event.picture and event.picture != '' %>
@@ -172,7 +172,7 @@
   <section class="closing-soon">
     <h1 class="opening-closing">Closing soon</h1>
     <ol>
-      <% @closing.each do |event| %>
+      <% @closing[0..0].each do |event| %>
         <li>
           <article class="event">
             <% if event.picture and event.picture != '' %>
