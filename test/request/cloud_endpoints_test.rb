@@ -6,4 +6,9 @@ class CloudEndpointsTest < LocaCloudApiTest
     assert last_response.ok?, "Request failed: #{last_response.inspect}"
     assert_equal 'LocaLondon', JSON.parse(last_response.body)['name']
   end
+
+  def test_can_get_icon
+    get "/icon.png"
+    assert last_response.ok?
+  end
 end
