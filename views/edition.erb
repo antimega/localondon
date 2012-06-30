@@ -112,50 +112,67 @@
     <h1 class="opening-closing">Opening this week</h1>
 
     <ol>
+      <% @opening.each do |event| %>
       <li>
         <article class="event">
+          <% if event.picture and event.picture != '' %>
           <div class="event-image">
-            <img src="http://media.vam.ac.uk/media/website/versions/uploads/display_images/collusion_saunders_paddock_custom_290x242_06200518.jpg" class="dither">
+            <img src="<%= event.picture %>" class="dither">
           </div>
-          <h1 class="event-title">Britain Creates 2012: Fashion + Art Collusion</h1>
-          <h2 class="event-dates">From 6 July to 15 September</h2>
-          <p class="event-description">Leading British fashion designers and visual artists collaborate in a ground-breaking series of works commissioned as part of the London 2012 Festival.</p>
+          <% elsif event.venue.picture and event.venue.picture != '' %>
+          <div class="event-image">
+            <img src="<%= event.venue.picture %>" class="dither">
+          </div>
+          <% end %>
+          <h1 class="event-title"><%= event.title %></h1>
+          <h2 class="event-dates">From <%= event.startdate %> to <% event.enddate %></h2>
+          <p class="event-description"><%= event.description %></p>
           <div class="venue">
-            <p class="venue-name">The Victoria &amp; Albert Museum</p>
-            <p class="venue-address">Cromwell Road, London, SW7 2RL</p>
-            <p class="venue-phone">020 7942 2000</p>
-            <p class="venue-twitter">@V_and_A</p>
+            <p class="venue-name"><%= event.venue.name %></p>
+            <p class="venue-address"><%= event.venue.address %></p>
+            <p class="venue-phone"><%= event.venue.phone %></p>
+            <p class="venue-twitter"><%= event.venue.twitter %></p>
             <div class="venue-map">
-              <img src="/bergcloud/vacloseupbingaz.png">
+              <img src="http://localondon.herokuapp.com/maps/<%= event.id %>.png" alt="Map">
             </div>
           </div>
         </article>
       </li>
-      <li>
-        <article class="event">
-          <div class="event-image">
-            <img src="http://media.vam.ac.uk/media/website/versions/uploads/display_images/collusion_saunders_paddock_custom_290x242_06200518.jpg" class="dither">
-          </div>
-          <h1 class="event-title">Britain Creates 2012: Fashion + Art Collusion</h1>
-          <h2 class="event-dates">From 6 July to 15 September</h2>
-          <p class="event-description">Leading British fashion designers and visual artists collaborate in a ground-breaking series of works commissioned as part of the London 2012 Festival.</p>
-          <div class="venue">
-            <p class="venue-name">The Victoria &amp; Albert Museum</p>
-            <p class="venue-address">Cromwell Road, London, SW7 2RL</p>
-            <p class="venue-phone">020 7942 2000</p>
-            <p class="venue-twitter">@V_and_A</p>
-            <div class="venue-map">
-              <img src="/bergcloud/vacloseupbingaz.png">
-            </div>
-          </div>
-        </article>
-      </li>
+      <% end %>
     </ol>
 
   </section>
 
   <section class="closing-soon">
     <h1 class="opening-closing">Closing soon</h1>
+    <% @closing.each do |event| %>
+          <li>
+        <article class="event">
+          <% if event.picture and event.picture != '' %>
+          <div class="event-image">
+            <img src="<%= event.picture %>" class="dither">
+          </div>
+          <% elsif event.venue.picture and event.venue.picture != '' %>
+          <div class="event-image">
+            <img src="<%= event.venue.picture %>" class="dither">
+          </div>
+          <% end %>
+
+          <h1 class="event-title"><%= event.title %></h1>
+          <h2 class="event-dates">From <%= event.startdate %> to <% event.enddate %></h2>
+          <p class="event-description"><%= event.description %></p>
+          <div class="venue">
+            <p class="venue-name"><%= event.venue.name %></p>
+            <p class="venue-address"><%= event.venue.address %></p>
+            <p class="venue-phone"><%= event.venue.phone %></p>
+            <p class="venue-twitter"><%= event.venue.twitter %></p>
+            <div class="venue-map">
+              <img src="http://localondon.herokuapp.com/maps/<%= event.id %>.png" alt="Map">
+            </div>
+          </div>
+        </article>
+      </li>
+    <% end %>
 
   </section>
 </body>
