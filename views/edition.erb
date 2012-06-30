@@ -3,19 +3,131 @@
 <head>
   <title>LocaLondon</title>
   <style type="text/css">
+    html {
+      background-color: #eee;
+      margin: 0;
+      padding: 0;
+    }
     body {
+      background-color: #ffffff;
+      font-family:"Signika", sans-serif;
+      font-size: 10px;
+      line-height: 1.4;
+      margin: 0;
+      padding: 10px 0;
       width: 384px;
-      padding: 0px;
-      margin: 0px;
     }
-    h1 {
+    h1, h2, h3 {
+      font-weight: normal;
+    }
+    p {
+      font-size: 22px;
+      margin: 6px 0;
+    }
+    ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    ol li {
+      counter-increment: chapter;
+      position: relative;
+    }
+    ol li:before {
+      content: counter(chapter);
+      font-size: 22px;
+      background: url('/bergcloud/localondon-black-40.png') no-repeat 0 0;
+      color: white;
+      padding: 6px 15px;
+      position: absolute;
+      top: -17px;
+      right: 0;
+    }
+    li:nth-child(1) {
+
+    }
+
+    h1.app-title {
+      background: url('/bergcloud/localondon-black-40.png') no-repeat 0 0;
+      font-size: 24px;
+      line-height: 24px;
+      margin: 8px 0 24px 0;
+      padding: 8px 0 8px 50px;
       word-wrap: break-word;
-      font-family:sans-serif;
     }
+    img {
+      width: 100%;
+    }
+
+    h1.opening-closing {
+      font-size: 24px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    h1.event-title {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-top: 8px;
+      margin-bottom: 0px;
+    }
+    h2.event-dates {
+      font-size: 18px;
+      margin-top: 4px;
+      margin-bottom: 12px;
+    }
+
+    .venue {
+      margin-bottom: 16px;
+    }
+
+    .venue p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .event-description {
+      font-size: 16px;
+    }
+
+
   </style>
 </head>
 <body>
-  <h1>Hello. World. And Others.</h1>
-  <p>Not much to see here yet. Try https://twitter.com/localondon</p>
+ <h1 class="app-title">Localondon</h1>
+
+  <section class="opening-this-week">
+    <h1 class="opening-closing">Opening this week</h1>
+
+    <ol>
+      <li>
+        <article class="event">
+          <div class="event-image">
+            <img src="http://media.vam.ac.uk/media/website/versions/uploads/display_images/collusion_saunders_paddock_custom_290x242_06200518.jpg" />
+          </div>
+          <h1 class="event-title">Britain Creates 2012: Fashion + Art Collusion</h1>
+          <h2 class="event-dates">From 6 July to 15 September</h2>
+          <div class="venue">
+            <p class="venue-name">The Victoria &amp; Albert Museum</p>
+            <p class="venue-address">Cromwell Road, London, SW7 2RL</p>
+            <p class="venue-phone">020 7942 2000</p>
+            <p class="venue-twitter">@V_and_A</p>
+          </div>
+          <p class="event-description">Leading British fashion designers and visual artists collaborate in a ground-breaking series of works commissioned as part of the London 2012 Festival.</p>
+          <div class="venue-map">
+            
+          </div>
+        </article>
+      </li>
+      <li></li>
+    </ol>
+
+  </section>
+
+  <section class="closing-soon">
+    <h1 class="opening-closing">Closing soon</h1>
+
+  </section>
 </body>
 </html>
