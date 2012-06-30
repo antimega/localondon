@@ -40,17 +40,17 @@ end
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
-get "/" do
-  	Venue.get(1).title
+get "/admin" do
+	Venue.get(1).title
 end
 
 # Show list of venues
-get '/venues/' do
+get '/admin/venues' do
 	haml :venuelist, :locals => { :cs => Venue.all }
 end
 
 # Show form to create new venue
-get '/venues/new' do
+get '/admin/venues/new' do
 	haml :venueform, :locals => {
  		:c => Venue.new,
  		:action => '/venues/create'
@@ -58,7 +58,7 @@ get '/venues/new' do
 end
 
 # Create new venue
-post '/venues/create' do
+post '/admin/venues/create' do
 	c = Venue.new
 	c.attributes = params
 	c.save
@@ -67,7 +67,7 @@ post '/venues/create' do
 end
 
 # Show form to edit venue
-get '/venues/:id/edit' do|id|
+get '/admin/venues/:id/edit' do|id|
 	c = Venue.get(id)
 	haml :venueform, :locals => {
 	 	:c => c,
@@ -76,7 +76,7 @@ get '/venues/:id/edit' do|id|
 end
 
 # Edit a venue
-post '/venues/:id/update' do|id|
+post '/admin/venues/:id/update' do|id|
 	c = Venue.get(id)
 	c.update_attributes params
 
@@ -84,7 +84,7 @@ post '/venues/:id/update' do|id|
 end
 
 # Delete a venue
-post '/venues/:id/destroy' do|id|
+post '/admin/venues/:id/destroy' do|id|
 	c = Venue.get(id)
 	c.destroy
 
@@ -92,12 +92,7 @@ post '/venues/:id/destroy' do|id|
 end
 
 # View a venue
-get '/venues/:id' do|id|
+get '/admin/venues/:id' do|id|
 	c = Venue.get(id)
 	haml :venueshow, :locals => { :c => c }
 end
-
-__END__
-
-
-
