@@ -41,6 +41,8 @@ end
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
+require 'import'
+
 get "/admin" do
 	Venue.get(1).title
 end
