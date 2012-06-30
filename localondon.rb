@@ -136,6 +136,8 @@ post "/bergcloud/validate_config/" do
   # "Optional This endpoint is only required if your publication is configurable by the
   # subscriber (for example a postcode if your pub was a daily weather forecast). The user
   # input will be passed here for you to validate when the subscription is being created."
+  content_type :json
+  {"valid" => true}.to_json
 end
 
 post "/bergcloud/configure/" do
