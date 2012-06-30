@@ -119,7 +119,7 @@ get "/edition/" do
   # are passed in along with timezone information (if requested by the publication)"
 end
 
-get '/sample' do
+get '/sample/?' do
   # "Returns sample content for the users wishing to test this publication without setting 
   # up a subscription icon  "
 

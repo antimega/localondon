@@ -13,6 +13,11 @@ class CloudEndpointsTest < LocaCloudApiTest
   end
 
   def test_can_get_sample_publication
+    get "/sample/"
+    assert last_response.ok?
+  end
+
+  def test_can_get_sample_publication_without_slash
     get "/sample"
     assert last_response.ok?
   end
