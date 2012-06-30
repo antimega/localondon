@@ -7,6 +7,7 @@ gem 'haml'
 gem 'sinatra-contrib'
 gem 'dm-geokit'
 gem 'dm-aggregates'
+gem 'dm-postgres-adapter'
 gem 'dm-sqlite-adapter'
 
 gem 'mocha'

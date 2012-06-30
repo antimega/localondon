@@ -9,7 +9,7 @@ require 'dm-geokit'
 require 'dm-aggregates'
 require 'json'
 
-DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/localondon.db")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/localondon.db")
 
 class Event
   include DataMapper::Resource
