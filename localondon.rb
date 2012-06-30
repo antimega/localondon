@@ -10,7 +10,6 @@ require 'dm-aggregates'
 require 'json'
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/localondon.db")
-require 'open-uri'
 
 class Event
   include DataMapper::Resource
