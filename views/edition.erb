@@ -32,12 +32,10 @@
       padding: 0;
     }
     ol li {
-      counter-increment: chapter;
       margin-bottom: 56px;
       position: relative;
     }
     ol li:before {
-      content: counter(chapter);
       font-size: 22px;
       font-weight: 600;
       background: url('http://localondon.herokuapp.com/bergcloud/localondon-black-40-aa.png') no-repeat 0 0;
@@ -46,6 +44,20 @@
       position: absolute;
       top: -17px;
       left: 0;
+    }
+
+    .opening-this-week ol li {
+      counter-increment: opening-event;
+    }
+    .opening-this-week ol li:before {
+      content: counter(opening-event);
+    }
+
+    .closing-soon ol li {
+      counter-increment: closing-event;
+    }
+    .closing-soon ol li:before {
+      content: counter(closing-event);
     }
 
     h1.app-title {
@@ -159,34 +171,37 @@
 
   <section class="closing-soon">
     <h1 class="opening-closing">Closing soon</h1>
-    <% @closing[0..1].each do |event| %>
-          <li>
-        <article class="event">
-          <% if event.picture and event.picture != '' %>
-          <div class="event-image">
-            <img src="<%= event.picture %>" class="dither">
-          </div>
-          <% elsif event.venue.picture and event.venue.picture != '' %>
-          <div class="event-image">
-            <img src="<%= event.venue.picture %>" class="dither">
-          </div>
-          <% end %>
-
-          <h1 class="event-title"><%= event.title %></h1>
-          <h2 class="event-dates">From <%= event.startdate %> to <%= event.enddate %></h2>
-          <p class="event-description"><%= event.description %></p>
-          <div class="venue">
-            <p class="venue-name"><%= event.venue.name %></p>
-            <p class="venue-address"><%= event.venue.address_street_address.strip %>, <%= event.venue.address_zip %></p>
-            <p class="venue-phone"><%= event.venue.phone %></p>
-            <p class="venue-twitter"><%= event.venue.twitter %></p>
-            <div class="venue-map">
-              <img src="http://localondon.herokuapp.com/maps/<%= event.id %>.png" alt="Map">
+    <ol>
+      <% @closing.each do |event| %>
+        <li>
+          <article class="event">
+            <% if event.picture and event.picture != '' %>
+            <div class="event-image">
+              <img src="<%= event.picture %>" class="dither">
             </div>
-          </div>
-        </article>
-      </li>
-    <% end %>
+            <% elsif event.venue.picture and event.venue.picture != '' %>
+            <div class="event-image">
+              <img src="<%= event.venue.picture %>" class="dither">
+            </div>
+            <% end %>
+
+            <h1 class="event-title"><%= event.title %></h1>
+            <h2 class="event-dates">From <%= event.startdate %> to <%= event.enddate %></h2>
+            <p class="event-description"><%= event.description %></p>
+            <div class="venue">
+              <p class="venue-name"><%= event.venue.name %></p>
+              <p class="venue-address"><%= event.venue.address_street_address.strip %>, <%= event.venue.address_zip %></p>
+              <p class="venue-phone"><%= event.venue.phone %></p>
+              <p class="venue-twitter"><%= event.venue.twitter %></p>
+              <div class="venue-map">
+                <span class="map-pin"></span>
+                <img src="http://localondon.herokuapp.com/maps/<%= event.id %>.png" alt="Map">
+              </div>
+            </div>
+          </article>
+        </li>
+      <% end %>
+    </ol>
 
   </section>
 </body>
