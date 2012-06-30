@@ -131,10 +131,6 @@ get '/bergcloud/sample/?' do
   erb :sample_publication
 end
 
-get "/bergcloud/icon.png" do
-  # "An icon to show in to publications list on BERG Cloud"
-end
-
 post "/bergcloud/validate_config/" do
   # "Optional This endpoint is only required if your publication is configurable by the
   # subscriber (for example a postcode if your pub was a daily weather forecast). The user
