@@ -21,4 +21,9 @@ class CloudEndpointsTest < LocaCloudApiTest
     get "/bergcloud/sample"
     assert last_response.ok?
   end
+
+  def test_can_get_edition
+    get "/bergcloud/edition"
+    assert last_response.ok?
+  end
 end
