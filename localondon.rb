@@ -117,6 +117,7 @@ end
 get "/bergcloud/edition/?" do
   # "Returns the version of this publication for this time. Configuration options (if any) 
   # are passed in along with timezone information (if requested by the publication)"
+  erb :edition
 end
 
 get '/bergcloud/sample/?' do
