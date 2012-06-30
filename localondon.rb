@@ -101,18 +101,18 @@ end
 # Routes for BERG Cloud.
 # TODO: Consider making the different interfaces into modules or otherwise separating
 
-get "/bergcloud/meta.json" do
-  #"Publications describe themselves to BERG Cloud using the JSON contained in meta.json. edition"
-  content_type :json
-  {
-    "name" => "LocaLondon",
-    "description" => "Stuff that's going on",
-    "delivered_on" => "every day",
-    "external_configuration" => "false",
-    "send_timezone_info" => "false",
-    "send_delivery_count" =>  "false",
-  }.to_json
-end
+# get "/bergcloud/meta.json" do
+#   #"Publications describe themselves to BERG Cloud using the JSON contained in meta.json. edition"
+#   content_type :json
+#   {
+#     "name" => "LocaLondon",
+#     "description" => "Stuff that's going on",
+#     "delivered_on" => "every day",
+#     "external_configuration" => "false",
+#     "send_timezone_info" => "false",
+#     "send_delivery_count" =>  "false",
+#   }.to_json
+# end
 
 get "/bergcloud/edition/?" do
   # "Returns the version of this publication for this time. Configuration options (if any) 
