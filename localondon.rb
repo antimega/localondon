@@ -101,7 +101,7 @@ end
 # Routes for BERG Cloud.
 # TODO: Consider making the different interfaces into modules or otherwise separating
 
-get "/meta.json" do
+get "/bergcloud/meta.json" do
   #"Publications describe themselves to BERG Cloud using the JSON contained in meta.json. edition"
   content_type :json
   {
@@ -114,12 +114,12 @@ get "/meta.json" do
   }.to_json
 end
 
-get "/edition/" do
+get "/bergcloud/edition/?" do
   # "Returns the version of this publication for this time. Configuration options (if any) 
   # are passed in along with timezone information (if requested by the publication)"
 end
 
-get '/sample/?' do
+get '/bergcloud/sample/?' do
   # "Returns sample content for the users wishing to test this publication without setting 
   # up a subscription icon  "
 
@@ -130,17 +130,17 @@ get '/sample/?' do
   erb :sample_publication
 end
 
-get "/icon.png" do
+get "/bergcloud/icon.png" do
   # "An icon to show in to publications list on BERG Cloud"
 end
 
-post "/validate_config/" do
+post "/bergcloud/validate_config/" do
   # "Optional This endpoint is only required if your publication is configurable by the
   # subscriber (for example a postcode if your pub was a daily weather forecast). The user
   # input will be passed here for you to validate when the subscription is being created."
 end
 
-post "/configure/" do
+post "/bergcloud/configure/" do
   # "Optional If your publication requires the user to authenticate with a third party 
   # (e.g. Foursquare, for a publication showing recent checkins), set "external_config":"true" 
   # in meta.json and add the code to redirect to the third party at this endpoint"
