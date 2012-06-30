@@ -9,7 +9,7 @@
       padding: 0;
     }
     body {
-      background-color: #ffffff;
+      background: url('http://localondon.herokuapp.com/bergcloud/small_bunting_down') 0 0 no-repeat #ffffff;
       font-family:"Signika", sans-serif;
       font-size: 10px;
       line-height: 1.4;
@@ -24,6 +24,9 @@
       font-size: 22px;
       margin: 6px 0;
     }
+    article img {
+      width: 100%;
+    }
     ol {
       list-style: none;
       margin: 0;
@@ -31,38 +34,40 @@
     }
     ol li {
       counter-increment: chapter;
+      margin-bottom: 56px;
       position: relative;
     }
     ol li:before {
       content: counter(chapter);
       font-size: 22px;
-      background: url('http://localondon.herokuapp.com/bergcloud/localondon-black-40.png') no-repeat 0 0;
+      font-weight: 600;
+      background: url('http://localondon.herokuapp.com/bergcloud/localondon-black-40-aa.png') no-repeat 0 0;
       color: white;
       padding: 6px 15px;
       position: absolute;
       top: -17px;
-      right: 0;
-    }
-    li:nth-child(1) {
-
+      left: 0;
     }
 
     h1.app-title {
-      background: url('http://localondon.herokuapp.com/bergcloud/localondon-black-40.png') no-repeat 0 0;
+      /*background: url('http://localondon.herokuapp.com/bergcloud/localondon-black-40.png') no-repeat 0 0;*/
       font-size: 24px;
       line-height: 24px;
       margin: 8px 0 24px 0;
-      padding: 8px 0 8px 50px;
-      word-wrap: break-word;
+      /*padding: 8px 0 8px 50px;*/
+      text-align: center;
     }
-    img {
-      width: 100%;
+    h1.app-title img {
+      margin-top: -2px;
+      margin-right: 8px;
+      vertical-align: middle;
     }
 
     h1.opening-closing {
       font-size: 24px;
       margin-top: 16px;
       margin-bottom: 16px;
+      text-align: center;
     }
 
     h1.event-title {
@@ -72,10 +77,16 @@
       margin-top: 8px;
       margin-bottom: 0px;
     }
+
     h2.event-dates {
       font-size: 18px;
       margin-top: 4px;
       margin-bottom: 12px;
+    }
+
+    .event-description {
+      font-size: 22px;
+      margin-bottom: 16px;
     }
 
     .venue {
@@ -83,19 +94,20 @@
     }
 
     .venue p {
+      font-size: 18px;
       margin-top: 0;
       margin-bottom: 0;
     }
 
-    .event-description {
-      font-size: 16px;
+    .venue-map {
+      margin-top: 16px;
     }
 
 
   </style>
 </head>
 <body>
- <h1 class="app-title">localondon</h1>
+ <h1 class="app-title"><img src="http://localondon.herokuapp.com/bergcloud/localondon-black-40-aa.png">localondon</h1>
 
   <section class="opening-this-week">
     <h1 class="opening-closing">Opening this week</h1>
@@ -108,19 +120,37 @@
           </div>
           <h1 class="event-title">Britain Creates 2012: Fashion + Art Collusion</h1>
           <h2 class="event-dates">From 6 July to 15 September</h2>
+          <p class="event-description">Leading British fashion designers and visual artists collaborate in a ground-breaking series of works commissioned as part of the London 2012 Festival.</p>
           <div class="venue">
             <p class="venue-name">The Victoria &amp; Albert Museum</p>
             <p class="venue-address">Cromwell Road, London, SW7 2RL</p>
             <p class="venue-phone">020 7942 2000</p>
             <p class="venue-twitter">@V_and_A</p>
-          </div>
-          <p class="event-description">Leading British fashion designers and visual artists collaborate in a ground-breaking series of works commissioned as part of the London 2012 Festival.</p>
-          <div class="venue-map">
-            <img src="/bergcloud/vacloseupbingaz.png">
+            <div class="venue-map">
+              <img src="/bergcloud/vacloseupbingaz.png">
+            </div>
           </div>
         </article>
       </li>
-      <li></li>
+      <li>
+        <article class="event">
+          <div class="event-image">
+            <img src="http://media.vam.ac.uk/media/website/versions/uploads/display_images/collusion_saunders_paddock_custom_290x242_06200518.jpg" class="dither">
+          </div>
+          <h1 class="event-title">Britain Creates 2012: Fashion + Art Collusion</h1>
+          <h2 class="event-dates">From 6 July to 15 September</h2>
+          <p class="event-description">Leading British fashion designers and visual artists collaborate in a ground-breaking series of works commissioned as part of the London 2012 Festival.</p>
+          <div class="venue">
+            <p class="venue-name">The Victoria &amp; Albert Museum</p>
+            <p class="venue-address">Cromwell Road, London, SW7 2RL</p>
+            <p class="venue-phone">020 7942 2000</p>
+            <p class="venue-twitter">@V_and_A</p>
+            <div class="venue-map">
+              <img src="/bergcloud/vacloseupbingaz.png">
+            </div>
+          </div>
+        </article>
+      </li>
     </ol>
 
   </section>
