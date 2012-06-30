@@ -1,43 +1,51 @@
 %h1 Create a new venue
 %form(action="#{action}" method="POST")
-%label(for="name") Name
-%input(type="text" name="name" value="#{c.name}")
-%br
+  %label(for="name") Name
+  %input(type="text" name="name" value="#{c.name}")
+  %br
 
-%label(for="twitter") Twitter
-%input(type="text" name="twitter" value="#{c.twitter}")
-%br
-%label(for="website") Website
-%input(type="text" name="website" value="#{c.website}")
-%br
-%label(for="phone") Phone
-%input(type="text" name="phone" value="#{c.phone}")
-%br
-%label(for="picture") Picture
-%input(type="text" name="picture" value="#{c.picture}")
-%br
+  %label(for="twitter") Twitter
+  %input(type="text" name="twitter" value="#{c.twitter}")
+  %br
 
-%label(for="address_street_address") Street address
-%input(type="text" name="address_street_address" value="#{c.address_street_address}")
-%br
-%label(for="address_city") City
-%input(type="text" name="address_city" value="#{c.address_city}")
-%br
-%label(for="address_zip") Postcode
-%input(type="text" name="address_zip" value="#{c.address_zip}")
-%br
-%label(for="address_lat") Lat
-%input(type="text" name="address_lat" value="#{c.address_lat}")
-%br
-%label(for="address_lng") Lng
-%input(type="text" name="address_lng" value="#{c.address_lng}")
-%br
+  %label(for="website") Website
+  %input(type="text" name="website" value="#{c.website}")
+  %br
+
+  %label(for="phone") Phone
+  %input(type="text" name="phone" value="#{c.phone}")
+  %br
+
+  %label(for="picture") Picture
+  %input(type="text" name="picture" value="#{c.picture}")
+  %br
+
+  %label(for="address_street_address") Street address
+  %input(type="text" name="address_street_address" value="#{c.address_street_address}")
+  %br
+
+  %label(for="address_city") City
+  %input(type="text" name="address_city" value="#{c.address_city}")
+  %br
+
+  %label(for="address_zip") Postcode
+  %input(type="text" name="address_zip" value="#{c.address_zip}")
+  %br
+
+  %label(for="address_lat") Lat
+  %input(type="text" name="address_lat" value="#{c.address_lat}")
+  %br
+
+  %label(for="address_lng") Lng
+  %input(type="text" name="address_lng" value="#{c.address_lng}")
+  %br
 
 
-%input(type="submit")
-%input(type="reset")
+  %input(type="submit")
+  %input(type="reset")
+
 %br
 
 - unless c.id == 0
 %form(action="/venues/#{c.id}/destroy" method="POST")
- %input(type="submit" value="Destroy")
+  %input(type="submit" value="Destroy")

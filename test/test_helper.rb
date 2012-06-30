@@ -1,4 +1,4 @@
-require 'loca_cloud'
+require File.expand_path('../localondon', File.dirname(__FILE__))
 
 require 'test/unit'
 require 'rack/test'
