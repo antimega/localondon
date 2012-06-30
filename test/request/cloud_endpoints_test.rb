@@ -11,4 +11,9 @@ class CloudEndpointsTest < LocaCloudApiTest
     get "/icon.png"
     assert last_response.ok?
   end
+
+  def test_can_get_sample_publication
+    get "/sample"
+    assert last_response.ok?
+  end
 end
