@@ -1,0 +1,46 @@
+{
+  "name": "localondon",
+  "description": "Exhibitions in and around London",
+  "delivered_on":"Friday",
+  "external_configuration": "false",
+  "send_timezone_info": "false",
+  "send_delivery_count": "false",
+  "config": {
+    "fields": [
+              {
+                "type": "select",
+                "name": "event_type",
+                "label": "Pick which events to include",
+                "options": [
+                            ["Openings","opening"],
+                            ["Closings", "closing"],
+                            ["Random inspiration", "random"]
+                           ]
+              },
+              {
+                "type": "check_box",
+                "name": "venues",
+                "label": "Choose which venues to include",
+                "options": [
+                  ["Tate Modern","1"],
+                  ["Tate Britain","2"],
+                  ["Barbican Art Gallery","3"],
+                  ["Barbican Curve","4"],
+                  ["Hayward Gallery","5"],
+                  ["Royal Academy","6"],
+                  ["Hauser & Wirth","7"],
+                  ["Whitechapel Gallery","8"],
+                  ["Serpentine Gallery","9"],
+                  ["Victoria & Albert Museum","10"],
+                  ["Science Museum","11"],
+                  ["Natural History Museum","12"],
+                  ["White Cube Bermondsey","13"],
+                  ["White Cube Mason's Yard","14"],
+                  ["White Cube Hoxton Square","15"],
+                  ["ICA","16"],
+                  ["National Gallery","17"],
+                  ["National Portrait Gallery","18"],
+                ]
+              }
+            ]
+          }
