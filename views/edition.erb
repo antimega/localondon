@@ -100,6 +100,19 @@
 
     .venue-map {
       margin-top: 16px;
+      position: relative;
+    }
+
+    .venue-map .map-pin {
+      background: url('/bergcloud/localondon-map-pin.png') 0 0 no-repeat;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -28px;
+      margin-left: -21px;
+      height: 56px;
+      width: 42px;
     }
 
 
@@ -133,6 +146,7 @@
             <p class="venue-phone"><%= event.venue.phone %></p>
             <p class="venue-twitter">@<%= event.venue.twitter %></p>
             <div class="venue-map">
+              <span class="map-pin"></span>
               <img src="http://localondon.herokuapp.com/maps/<%= event.id %>.png" alt="Map">
             </div>
           </div>
