@@ -117,6 +117,7 @@ end
 get "/bergcloud/edition/?" do
   # "Returns the version of this publication for this time. Configuration options (if any) 
   # are passed in along with timezone information (if requested by the publication)"
+  etag "for-now-we-just-have-one"
   erb :edition
 end
 
@@ -129,10 +130,6 @@ get '/bergcloud/sample/?' do
   # Set the etag to be this content
   etag Digest::MD5.hexdigest(language+name)
   erb :sample_publication
-end
-
-get "/bergcloud/icon.png" do
-  # "An icon to show in to publications list on BERG Cloud"
 end
 
 post "/bergcloud/validate_config/" do
