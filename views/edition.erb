@@ -142,9 +142,16 @@
     <% @closing.each do |event| %>
           <li>
         <article class="event">
+          <% if event.picture and event.picture != '' %>
           <div class="event-image">
-            <img src="http://media.vam.ac.uk/media/website/versions/uploads/display_images/collusion_saunders_paddock_custom_290x242_06200518.jpg" class="dither">
+            <img src="<%= event.picture %>" class="dither">
           </div>
+          <% elsif event.venue.picture and event.venue.picture != '' %>
+          <div class="event-image">
+            <img src="<%= event.venue.picture %>" class="dither">
+          </div>
+          <% end %>
+
           <h1 class="event-title"><%= event.title %></h1>
           <h2 class="event-dates">From <%= event.startdate %> to <% event.enddate %></h2>
           <p class="event-description"><%= event.description %></p>
@@ -154,7 +161,7 @@
             <p class="venue-phone"><%= event.venue.phone %></p>
             <p class="venue-twitter"><%= event.venue.twitter %></p>
             <div class="venue-map">
-              <img src="/bergcloud/vacloseupbingaz.png">
+              <img src="http://localondon.herokuapp.com/maps/<%= event.id %>.png" alt="Map">
             </div>
           </div>
         </article>
