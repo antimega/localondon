@@ -137,7 +137,7 @@
     <h1 class="opening-closing">Opening this week</h1>
 
     <ol>
-      <% @opening[0..1].each do |event| %>
+      <% @opening[0..0].each do |event| %>
       <li>
         <article class="event">
           <% if event.picture and event.picture != '' %>
@@ -150,7 +150,7 @@
           </div>
           <% end %>
           <h1 class="event-title"><%= event.title %></h1>
-          <h2 class="event-dates">From <%= event.startdate %> to <%= event.enddate %></h2>
+          <h2 class="event-dates">From <%= event.startdate.strftime("%e %b %Y") %> to <%= event.enddate.strftime("%e %b %Y") %></h2>
           <p class="event-description"><%= event.description %></p>
           <div class="venue">
             <p class="venue-name"><%= event.venue.name %></p>
@@ -172,7 +172,7 @@
   <section class="closing-soon">
     <h1 class="opening-closing">Closing soon</h1>
     <ol>
-      <% @closing.each do |event| %>
+      <% @closing[0..0].each do |event| %>
         <li>
           <article class="event">
             <% if event.picture and event.picture != '' %>
@@ -186,7 +186,7 @@
             <% end %>
 
             <h1 class="event-title"><%= event.title %></h1>
-            <h2 class="event-dates">From <%= event.startdate %> to <%= event.enddate %></h2>
+            <h2 class="event-dates">From <%= event.startdate.strftime("%e %b %Y") %> to <%= event.enddate.strftime("%e %b %Y") %></h2>
             <p class="event-description"><%= event.description %></p>
             <div class="venue">
               <p class="venue-name"><%= event.venue.name %></p>
