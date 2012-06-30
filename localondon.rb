@@ -14,12 +14,12 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/localond
 class Event
   include DataMapper::Resource
 	property :id,		Serial
-	property :title,	String
+	property :title,	Text
 	property :description,	Text
 	property :startdate,	Date
 	property :enddate,	Date
-	property :city, 	String
-	property :url,        String
+	property :city, 	Text
+	property :url,        Text
 	property :picture, Text
 	belongs_to :venue
 end
@@ -29,7 +29,7 @@ class Venue
   include DataMapper::Resource
   include DataMapper::GeoKit
 	property :id,		Serial
-	property :name,	String
+	property :name,	Text
 	property :twitter, String
 	property :website, Text
 	property :phone, String
