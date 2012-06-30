@@ -41,7 +41,7 @@ end
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
-require File.expand_path('import', File.dirname(__FILE__))
+# require File.expand_path('import', File.dirname(__FILE__))
 
 get "/admin" do
 	Venue.get(1).title
