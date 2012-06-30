@@ -114,15 +114,21 @@ get "/meta.json" do
   }.to_json
 end
 
-
 get "/edition/" do
-  # "Returns the version of this publication for this time. Configuration options (if any) are passed in along with timezone information (if requested by the publication)"
+  # "Returns the version of this publication for this time. Configuration options (if any) 
+  # are passed in along with timezone information (if requested by the publication)"
 end
 
+get '/sample/' do
+  # "Returns sample content for the users wishing to test this publication without setting 
+  # up a subscription icon  "
 
-
-get "/sample/" do
-  # "Returns sample content for the users wishing to test this publication without setting up a subscription icon  "
+  language = 'english'
+  name = 'Little Printer'
+  @greeting = "#{greetings[language][0]}, #{name}"
+  # Set the etag to be this content
+  etag Digest::MD5.hexdigest(language+name)
+  erb :sample_publication
 end
 
 get "/icon.png" do
@@ -130,9 +136,13 @@ get "/icon.png" do
 end
 
 post "/validate_config/" do
-  # "Optional This endpoint is only required if your publication is configurable by the subscriber (for example a postcode if your pub was a daily weather forecast). The user input will be passed here for you to validate when the subscription is being created."
+  # "Optional This endpoint is only required if your publication is configurable by the
+  # subscriber (for example a postcode if your pub was a daily weather forecast). The user
+  # input will be passed here for you to validate when the subscription is being created."
 end
 
 post "/configure/" do
-  # "Optional If your publication requires the user to authenticate with a third party (e.g. Foursquare, for a publication showing recent checkins), set "external_config":"true" in meta.json and add the code to redirect to the third party at this endpoint"
+  # "Optional If your publication requires the user to authenticate with a third party 
+  # (e.g. Foursquare, for a publication showing recent checkins), set "external_config":"true" 
+  # in meta.json and add the code to redirect to the third party at this endpoint"
 end
