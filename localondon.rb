@@ -10,6 +10,7 @@ require 'dm-aggregates'
 require 'json'
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/localondon.db")
+require 'open-uri'
 
 class Event
   include DataMapper::Resource
@@ -40,6 +41,8 @@ end
 
 DataMapper.finalize
 DataMapper.auto_upgrade!
+
+require 'import'
 
 get "/admin" do
 	Venue.get(1).title
